@@ -1,0 +1,341 @@
+/* --- Root Core Minimalist Design Variables --- */
+:root {
+    --bg-light: #faf7f2;
+    --card-bg: #ffffff;
+    --romand-pink: #d47a75;
+    --romand-pink-hover: #b85e59;
+    --text-dark: #3a2e2b;
+    --text-muted: #857470;
+    --border-soft: #ebdcd8;
+    --max-width: 1140px;
+}
+
+/* --- Global Elements Normalization --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* --- Component Typography --- */
+h1, h2, h3 {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 48px;
+}
+
+/* --- Section 1: Navigation Header --- */
+.main-header {
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border-soft);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.brand-logo {
+    font-family: "Playfair Display", serif;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--romand-pink);
+    text-decoration: none;
+    letter-spacing: -1px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 0.95rem;
+    margin-left: 28px;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover, .nav-links a.active-link {
+    color: var(--romand-pink);
+}
+
+/* --- Section 2: Hero Layout --- */
+.hero-section {
+    padding: 80px 0;
+    background: linear-gradient(180deg, #ffffff 0%, var(--bg-light) 100%);
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.hero-tagline {
+    display: inline-block;
+    color: var(--romand-pink);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    transition: all 0.2s ease;
+}
+
+.hero-description {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    margin-bottom: 36px;
+    max-width: 540px;
+}
+
+.hero-cta-group {
+    display: flex;
+    gap: 16px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--romand-pink);
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(212, 122, 117, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: var(--romand-pink-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 122, 117, 0.4);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-dark);
+    border: 1px solid var(--border-soft);
+}
+
+.btn-secondary:hover {
+    background-color: rgba(58, 46, 43, 0.04);
+    transform: translateY(-2px);
+}
+
+.hero-image-wrapper img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(58, 46, 43, 0.08);
+}
+
+/* --- Section 3: Formulas Grid --- */
+.formulas-section {
+    padding: 100px 0;
+}
+
+.formulas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+}
+
+.formula-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-soft);
+    border-radius: 16px;
+    padding: 40px 32px;
+    box-shadow: 0 4px 6px rgba(58, 46, 43, 0.01);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formula-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(58, 46, 43, 0.06);
+}
+
+.formula-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+}
+
+.formula-card p {
+    color: var(--text-muted);
+    font-size: 0.98rem;
+}
+
+/* --- Section 4: 12 Swatches Grid --- */
+.shades-section {
+    padding: 100px 0;
+    background-color: #ffffff;
+    border-top: 1px solid var(--border-soft);
+}
+
+.shades-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 28px;
+}
+
+.shade-card {
+    background-color: var(--bg-light);
+    border-radius: 14px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.shade-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 24px rgba(58, 46, 43, 0.07);
+    border-color: var(--border-soft);
+}
+
+.shade-img-container {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background-color: #ebdcd8;
+}
+
+.shade-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.shade-info {
+    padding: 20px;
+}
+
+.shade-num {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+
+.shade-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+}
+
+.shade-footer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.color-dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    flex-shrink: 0;
+}
+
+.shade-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* --- Color Preview Dot Background Specifications --- */
+.dot-1  { background-color: #ca927a; } 
+.dot-2  { background-color: #9e6557; } 
+.dot-3  { background-color: #b37a85; } 
+.dot-4  { background-color: #a3505c; } 
+
+.dot-5  { background-color: #bfa18f; } 
+.dot-6  { background-color: #bc7974; } 
+.dot-7  { background-color: #a3828f; } 
+.dot-8  { background-color: #f79683; } 
+
+.dot-9  { background-color: #e38a7d; } 
+.dot-10 { background-color: #b56b73; } 
+.dot-11 { background-color: #70423c; } 
+.dot-12 { background-color: #947a89; } 
+
+/* --- Footer Area --- */
+.main-footer {
+    padding: 40px 0;
+    background-color: var(--text-dark);
+    color: #ebdcd8;
+    font-size: 0.9rem;
+}
+
+/* --- Responsive Adaptations --- */
+@media (max-width: 768px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .hero-description {
+        margin: 0 auto 36px;
+    }
+    .hero-cta-group {
+        justify-content: center;
+    }
+    .hero-title {
+        font-size: 2.6rem;
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+}
